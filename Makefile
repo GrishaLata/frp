@@ -44,20 +44,20 @@ e2e:
 	./hack/run-e2e.sh
 
 e2e-trace:
-	DEBUG=true LOG_LEVEL=trace ./hack/run-e2e.sh
+	DEBUG=true LOG_LEVEL=trace /home/andro/hack/run-e2e.sh
 
 e2e-compatibility-last-frpc:
 	if [ ! -d "./lastversion" ]; then \
-		TARGET_DIRNAME=lastversion ./hack/download.sh; \
+		TARGET_DIRNAME=lastversion /home/andro/hack/download.sh; \
 	fi
-	FRPC_PATH="`pwd`/lastversion/frpc" ./hack/run-e2e.sh
+	FRPC_PATH="`pwd`/lastversion/frpc" /home/andro/hack/run-e2e.sh
 	rm -r ./lastversion
 
 e2e-compatibility-last-frps:
 	if [ ! -d "./lastversion" ]; then \
-		TARGET_DIRNAME=lastversion ./hack/download.sh; \
+		TARGET_DIRNAME=lastversion /home/andro/hack/download.sh; \
 	fi
-	FRPS_PATH="`pwd`/lastversion/frps" ./hack/run-e2e.sh
+	FRPS_PATH="`pwd`/lastversion/frps" /home/andro/hack/run-e2e.sh
 	rm -r ./lastversion
 
 alltest: vet gotest e2e
